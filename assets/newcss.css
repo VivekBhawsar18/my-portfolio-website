@@ -613,6 +613,13 @@ img {
   color: var(--first-color);
 }
 
+.qualification__content {
+  display: none;
+}
+.qualification__content.qualification__active {
+  display: block;
+}
+
 /*================= Services ==================*/
 
 .services_container {

@@ -44,23 +44,25 @@ skillsHeader.forEach((el) => {
 });
 
 /*============== Qualification Skills ===============*/
+const tabs = document.querySelectorAll('[data-target]');
+const tabContents = document.querySelectorAll('[data-content]');
 
-/*const tabs = document.querySelectorAll('[data-target]'),
-      tabContents = document.querySelectorAll('[data-content]')
-tabs.forEach(tab =>{
-    tab.addEventListener('click', () =>{
-        const target = document.querySelector(tab.dataset.target)
-        tabContents.forEach(tabContent =>{
-            tabContent.classList.remove('qualification__active')
-        })
-        target.classList.add('qualification__active')
-        tab.forEach(tab =>{
-            tab.classList.remove('qualification__active')
-        })
-        tab.classList.add('qualification__active')
-    })
-})      
-*/
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = document.querySelector(tab.dataset.target);
+
+    // Remove active class from all content
+    tabContents.forEach(t => t.classList.remove('qualification__active'));
+    // Remove active class from all tabs
+    tabs.forEach(t => t.classList.remove('qualification__active'));
+
+    // Add active class to current clicked tab and content
+    tab.classList.add('qualification__active');
+    target.classList.add('qualification__active');
+  });
+});
+
+
 
 /*======================= Services Modal ===================*/
 const modalViews = document.querySelectorAll(".services__modal"),
